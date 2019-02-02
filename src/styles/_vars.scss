@@ -1,0 +1,18 @@
+$minWidth:  1248px;
+$ss: sans-serif;
+$padding: 70px;
+$font: 'GillSans';
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+$bs1: 1px solid;
+
+// colors
+$gray: #8493a8;
+$bg: #eef1f8;
