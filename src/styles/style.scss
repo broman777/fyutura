@@ -108,6 +108,7 @@ img {
 .section-title {
 	padding-left: 100px;
 	margin-left: -100px;
+	margin-bottom: 48px;
 	position: relative;
 	text-transform: uppercase;
 	font-size: 10px;
@@ -163,10 +164,8 @@ img {
 		margin-left: 2*$padding;
 	}
 	.inner {
-		padding: 63px 0 78px;
-	}
-	.section-title {
-		margin-bottom: 48px;
+		padding-top: 63px;
+		padding-bottom: 78px;
 	}
 	.header {
 		margin-bottom: 60px;
@@ -216,5 +215,17 @@ img {
 	}
 }
 .portfolio {
-	background-color: black;
+	padding-top: 66px;
+	.header {
+		margin-bottom: 60px;
+	}
+	.subheader {
+		font-size: 36px;	
+		line-height: 1em;
+		max-width: 	50%;
+		margin-bottom: 28px;	
+	}
+	.btn {
+		margin-top: 38px;	
+	}
 }
