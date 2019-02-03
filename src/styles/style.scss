@@ -376,9 +376,24 @@ img {
 				margin-bottom: 36px;
 			}
 			.btn {
+				position: relative;
 				border-color: #fff;
 				background-color: #fff;
 				cursor: pointer;
+				&:hover:before {
+					width: 70px;
+				}
+				&:before {
+					content:"";
+					position: absolute;
+					top: 50%;
+					left: 100%;
+					margin-left: -66px;
+					width: 0;
+					transition: 0.2s ease;
+					height: 1px;
+					background-color: #000;
+				}
 				&:after {
 					content:'';
 					margin-left: 10px;

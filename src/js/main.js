@@ -29,7 +29,7 @@ $(document).ready(function(){
 		autoplay: true,
 		autoplaySpeed: 3000
 	});
-	$('#feedbacks').on('init beforeChange', function(){
+	$('#feedbacks').on('beforeChange', function(){
 	  $('#timer').removeClass('finished')
 	  setTimeout("$('#timer').addClass('finished');", 10);
 	});
