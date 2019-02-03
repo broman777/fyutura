@@ -30,6 +30,12 @@ a {
 	text-decoration: none;
 }
 * {box-sizing: border-box;-webkit-font-smoothing: antialiased;}
-.right{float: right;}
-.left{float: left;}
 .mob {display: none;}
+.clearfix:after, 
+.clearfix:before {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}

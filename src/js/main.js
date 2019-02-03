@@ -16,7 +16,10 @@ function pauseVid() {
 	$('#stats .text').fadeIn(300);
     vid.pause(); 
 }
+
+
 $(document).ready(function(){
+
 	$('#recent').slick({
 		arrows: false,
 		dots: true
@@ -50,4 +53,5 @@ $(document).ready(function(){
 		else console.warn('No block found!')
 	});
 	$('.popup .close').on('click',closePop);
+
 });

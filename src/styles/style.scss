@@ -94,6 +94,10 @@ header {
 	font-size: 10px;
 	height: 45px;
 	transition: 0.2s ease;
+	&.green {
+		border-color: $green;
+		color: $green;
+	}
 	&:hover {
 		border-width: 3px;
 	}
@@ -234,8 +238,10 @@ img {
 	#recent {
 		width: 50%;
 		margin-left: 50%;
-		font-size: 0;
 		letter-spacing: normal;
+		img {
+			display: block !important;
+		}
 		.slick-dots {
 			position: absolute;
 			bottom: 40px;
@@ -410,8 +416,34 @@ img {
 		position: relative;
 		max-width: 600px;
 		padding: 0 120px 70px 0;
-		border-bottom: 1px solid #e5e8f1;
-		margin-bottom: 40px;
+	}
+	#ach {
+		.header {
+			margin-bottom: 38px;
+		}
+		.left, .right {
+			float: left;
+			width: 50%;
+		}
+		.right {
+			padding-top: 8px;
+			li {
+				margin-bottom: 44px;
+			}
+			.digit {
+				font-size: 72px;
+				font-weight: bold;
+				line-height: 1em;
+				margin-bottom: 5px;
+			}
+			.upwork {
+				margin-top: 64px;
+				display: block;
+				width: 100%;
+				height: 70px;
+				background: url(../img/ui/up.png) no-repeat 50% 50% $green;
+			}
+		}
 	}
 	#feedbacks {
 		img {
@@ -422,7 +454,7 @@ img {
 			display: none!important;
 		}
 		.author {
-			margin-top: 32px;
+			margin-top: 20px;
 		}
 	}
 	#feed-next {
@@ -446,5 +478,191 @@ img {
 			transition: 3s linear;
 			stroke-dasharray: 80;
 		}
+	}
+}
+#ach {
+	border-top: 1px solid #e5e8f1;
+	padding-top: 64px;
+}
+#tech {
+	padding: 86px $padding 86px 0;
+	background-color: $bg;
+	margin-right: 0-$padding;
+	.header {
+		margin-bottom: 34px!important;
+	}
+	.tech-list {
+		font-size: 0;
+		letter-spacing: normal;
+		text-align: center;
+		li {
+			height: 100px;
+			min-width: 150px;
+			width: 16.66%;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+}
+#contacts {
+	background-color: #000;
+	color: #fff;
+	.inner {
+		position: relative;
+		background-color: #252525;
+	}
+	form {
+		width: 50%;
+		padding: 90px 50px 100px 0;
+		.header {
+			font-size: 42px;
+			line-height: 1em;
+			padding-bottom: 42px;
+			border-bottom: 1px solid #676767;
+		}
+		label {
+			position: relative;
+			display: block;
+			width: 100%;
+			padding-left: 100px;
+			input {
+				height: 51px;
+				width: 100%;
+				border: none;
+				background-color: transparent;
+				border-bottom: 1px solid #676767;
+				outline: none;
+				border-radius: 0!important;
+				-webkit-apperance: none;
+				font-family: $font, $ss;
+				font-size: 12px;
+				color: #fff;
+				transition: border 0.2s ease;
+				&:focus{
+					border-color: #fff;
+				}
+				&:invalid {
+					color: red;
+					border-color: red;
+				}
+			}
+			span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100px;
+				line-height: 50px;
+				font-size: 10px;
+				text-transform: uppercase;
+				font-weight: bold;
+				border-bottom: 1px solid #676767;
+			}
+		}
+		.btn {
+			float: right;
+			margin-top: 30px;
+			background-color: transparent;
+			color: #fff;
+			border-color: #fff;
+		}
+	}
+	#addr {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 50%;
+		margin-left: 85px;
+		display: block;
+		height: 100%;
+		#map {
+			height: 100%;
+		}
+		#coord {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			font-size: 0;
+			letter-spacing: normal;
+			li {
+				position: relative;
+				letter-spacing: 0.1em;
+				font-size: 9px;
+				display: inline-block;
+				vertical-align: top;
+				padding: 13px 0 0 9%;
+				width: 50%;
+				line-height: 1.5em;
+				text-transform: uppercase;
+				color: #a3a3a3;
+				background-color: #000;
+				cursor: pointer;
+				transition: 0.2s ease;
+				.city {
+					text-transform: none;
+					font-size: 14px;
+					letter-spacing: 0.01em;
+					margin-bottom: 9px;
+				}
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					bottom: 100%;
+					right: -1px;
+					left: 0;
+					height: 7px;
+					background-color: #000;
+				}
+				&.active {
+					cursor: default;
+					color: #fff;
+					&:before {
+						background: url(../img/map.png) no-repeat 0 90%;
+						background-size: 100% auto;
+					}
+				}
+			}
+		}
+	}
+}
+footer {
+	background-color: #000;
+	color: #fff;
+	padding: 60px 0;
+	.cont {
+		display: inline-block;
+		vertical-align: top;
+		li {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 16px;
+			a {
+				display: block;
+				color: #fff;
+			}
+			.email {
+				&:after {
+					content:'';
+					display: inline-block;
+					vertical-align: top;
+					height: 1px;
+					width: 80px;
+					background-color: #fff;
+					margin: 10px 0 0 40px;
+				}
+			}
+			.dou {
+				@include sprite('dou_white');
+			}
+			.up {
+				@include sprite('up_white');
+			}
+		}
+	}
+	.copyright {
+		float: right;
 	}
 }
