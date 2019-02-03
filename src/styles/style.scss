@@ -48,6 +48,11 @@ header {
 			color: #000;
 			font-size: 16px;
 			line-height: 20px;
+			transition: 0.2s ease;
+			opacity: 1;
+			&:hover {
+				opacity: 0.5;
+			}
 			&:first-child {
 				margin-left: 0;
 			}
@@ -73,6 +78,10 @@ header {
 		a {
 			display: block;
 			margin-left: 10px;
+			transition: 0.2s ease;
+			&:hover {
+				opacity: 0.5;
+			}
 		}
 		.dou {
 			@include sprite('dou_black'); 
@@ -655,8 +664,14 @@ footer {
 			vertical-align: top;
 			margin-right: 16px;
 			a {
+				line-height: 16px;
 				display: block;
 				color: #fff;
+				transition: 0.2s ease;
+				opacity: 1;
+				&:hover {
+					opacity: 0.5;
+				}
 			}
 			.email {
 				&:after {
@@ -666,7 +681,7 @@ footer {
 					height: 1px;
 					width: 80px;
 					background-color: #fff;
-					margin: 10px 0 0 40px;
+					margin: 6px 0 0 36px;
 				}
 			}
 			.dou {
