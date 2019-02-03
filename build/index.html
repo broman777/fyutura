@@ -16,11 +16,11 @@
 	<div class="wrap">
 		<span class="logo"></span>
 		<nav>
-			<a href="#">How we work</a>
-			<a href="#">Portfolio</a>
-			<a href="#">About us</a>
-			<a href="#">Acheivements</a>
-			<a href="#">Contacts</a>
+			<a href="#how">How we work</a>
+			<a href="#portfolio">Portfolio</a>
+			<a href="#about">About us</a>
+			<a href="#acheivements">Acheivements</a>
+			<a href="#contacts">Contacts</a>
 		</nav>
 		<ul class="social">
 			<li><a href="#" class="up"></a></li>
@@ -28,7 +28,7 @@
 		</ul>
 	</div>
 </header>
-<section class="top">
+<section id="top">
 	<div class="wrap">
 		<div class="inner">
 			<h1 class="header">Where your ideas evolve into products</h1>
@@ -41,12 +41,14 @@
 		</div>
 	</div>
 </section>
-<section class="how">
+<section id="how">
 	<div class="scroll">	
-			<div class="c-scroll-icon"><div class="c-scroll-icon-line-mask"><div class="c-scroll-icon-line"></div></div><div class="c-scroll-icon-triangle"><div class="c-scroll-icon-triangle-mask first"><div class="c-scroll-icon-triangle-line first"></div></div><div class="c-scroll-icon-triangle-mask right"><div class="c-scroll-icon-triangle-line right"></div></div><div class="c-scroll-icon-triangle-mask left"><div class="c-scroll-icon-triangle-line left"></div></div><div class="c-scroll-icon-triangle-mask last"><div class="c-scroll-icon-triangle-line last"></div></div></div></div>
+		<a class="c-scroll-icon" href="#portfolio"><div class="c-scroll-icon-line-mask"><div class="c-scroll-icon-line"></div></div><div class="c-scroll-icon-triangle"><div class="c-scroll-icon-triangle-mask first"><div class="c-scroll-icon-triangle-line first"></div></div><div class="c-scroll-icon-triangle-mask right"><div class="c-scroll-icon-triangle-line right"></div></div><div class="c-scroll-icon-triangle-mask left"><div class="c-scroll-icon-triangle-line left"></div></div><div class="c-scroll-icon-triangle-mask last"><div class="c-scroll-icon-triangle-line last"></div></div></div></a>
 	</div>
 	<div class="video">
-		<img src="img/vid.jpg" alt="">
+		<video autoplay muted loop>
+		  <source src="img/video.mp4"></source>
+		</video>
 	</div>
 	<div class="wrap">
 		<div class="inner">
@@ -66,14 +68,122 @@
 		</div>
 	</div>
 </section>
-<section class="portfolio">
+<section id="portfolio">
 	<div class="wrap">
 		<div class="inner">
-			<p class="section-title">portfolio</p>
-			<h2 class="header">Recent work</h2>
-			<p class="subheader">Tracking your brand’s mentions across the web in real time</p>
-			<p>Procter & Gamble Company</p>
-			<a href="#" class="btn">More detail</a>
+			<div class="text">
+				<p class="section-title">portfolio</p>
+				<h2 class="header">Recent work</h2>
+				<p class="subheader">Tracking your brand’s mentions across the web in real time</p>
+				<p>Procter & Gamble Company</p>
+				<a href="#" class="btn">More detail</a>
+			</div>
+			<div id="recent">
+				<div class="slide"><img src="img/slide1.jpg" alt=""></div>
+				<div class="slide"><img src="img/slide1.jpg" alt=""></div>
+				<div class="slide"><img src="img/slide1.jpg" alt=""></div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="about">
+	<div class="wrap">
+		<div class="inner">
+			<div class="info">
+				<div class="short">
+					<p class="section-title">about us</p>
+					<h1 class="header">Our team</h1>
+				</div>
+				<div class="text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex deleniti, sit hic quod eaque eos consequuntur fugiat quam ipsum aliquam quis nulla tenetur. Neque asperiores, similique harum facere recusandae nemo!
+				</div>
+			</div>
+			<div id="team">
+				<div class="slide">
+					<div class="img">
+						<img src="img/team1.jpg" class="bg" alt="">
+						<img src="img/team1.jpg" alt="">
+						<div class="soc">
+							<a href="#" class="fb"></a>
+							<a href="#" class="in"></a>
+						</div>
+					</div>
+					<p class="name">James Smith</p>
+					<p class="post">Co-founder, CFO</p>
+				</div>
+				<div class="slide">
+					<div class="img">
+						<img src="img/team2.jpg" class="bg" alt="">
+						<img src="img/team2.jpg" alt="">
+						<div class="soc">
+							<a href="#" class="fb"></a>
+							<a href="#" class="in"></a>
+						</div>
+					</div>
+					<p class="name">David Rodriguez</p>
+					<p class="post">Business development manager</p>
+				</div>
+				<div class="slide">
+					<div class="img">
+						<img src="img/team3.jpg" class="bg" alt="">
+						<img src="img/team3.jpg" alt="">
+						<div class="soc">
+							<a href="#" class="fb"></a>
+							<a href="#" class="in"></a>
+						</div>
+					</div>
+					<p class="name">Robert Hernandez</p>
+					<p class="post">HTML Layout developer</p>
+				</div>
+				<div class="slide">
+					<div class="img">
+						<img src="img/team4.jpg" class="bg" alt="">
+						<img src="img/team4.jpg" alt="">
+						<div class="soc">
+							<a href="#" class="fb"></a>
+							<a href="#" class="in"></a>
+						</div>
+					</div>
+					<p class="name">Michael Johnson</p>
+					<p class="post">System Analyst</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="stats">
+	<div class="wrap">
+		<div class="video">
+			<video id="video">
+			  <source src="img/video.mp4"></source>
+			</video>
+			<div class="text">
+				<p class="header">Short speak video with Nikita.</p>
+				<span class="btn" id="play">Play</span>
+			</div>
+		</div>
+		<div class="inner">
+			<p class="header">What our clients say about our work</p>	
+			<p class="bg">feedbacks</p>
+			<div class="feed-list">
+				<div id="feedbacks">
+					<div class="slide">
+						<img src="img/ms.png" alt="">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<p class="author">Robert Hernandez, System Analyst Microsoft</p>
+					</div>
+					<div class="slide">
+						<img src="img/ms.png" alt="">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<p class="author">Robert Hernandez, System Analyst Microsoft</p>
+					</div>
+				</div>	
+				<div id="feed-next" class="c-scroll-icon"><div class="c-scroll-icon-line-mask"><div class="c-scroll-icon-line"></div></div><div class="c-scroll-icon-triangle"><div class="c-scroll-icon-triangle-mask first"><div class="c-scroll-icon-triangle-line first"></div></div><div class="c-scroll-icon-triangle-mask right"><div class="c-scroll-icon-triangle-line right"></div></div><div class="c-scroll-icon-triangle-mask left"><div class="c-scroll-icon-triangle-line left"></div></div><div class="c-scroll-icon-triangle-mask last"><div class="c-scroll-icon-triangle-line last"></div></div></div></div>
+				<svg viewBox="0 0 16 16" version="1.1" id="timer"
+				  xmlns="http://www.w3.org/2000/svg">
+				  <circle cx="8" cy="8" r="6" stroke="black" stroke-width="1" fill="none" />
+				</svg>
+			</div>
 		</div>
 	</div>
 </section>
@@ -81,6 +191,8 @@
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
+<script
+  src="js/vendor/slick.js"></script>
 <script type="text/javascript" src="js/main.min.js"></script>
 </body>
 </html>
