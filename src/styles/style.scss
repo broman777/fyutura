@@ -12,7 +12,6 @@ html, body {
 body {
 	font: 400 14px/1.43em $font, $ss;
 	letter-spacing: 0.01em;
-	min-width: 1024px;
 	overflow: auto;
 }
 button {background-color: #fff;}
@@ -20,6 +19,7 @@ section {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	min-width: 980px;
 }
 .wrap {
 	position: relative;
@@ -29,6 +29,7 @@ section {
 	padding-left: 100px;
 }
 header {
+	min-width: 980px;
 	background-color: rgba(255,255,255,0.5);
 	position: fixed;
 	top: 0;
@@ -821,7 +822,7 @@ footer {
 @media screen and (max-width: 1170px) {
 	header {
 		nav a {
-			margin-left: 34px;
+			margin-left: 30px;
 		}
 		.social {
 			padding-left: 0;
