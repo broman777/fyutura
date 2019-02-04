@@ -1,11 +1,9 @@
 function closePop() {
-	$('.toggle, .dropdown, .popup, .toggle-nav, .main-nav').removeClass('active');
-	$('body').removeClass('activePop');
+	$('#popup').removeClass('active');
 }
 function showPop(id) {
 	closePop();
-	var pop = $('#'+id);
-	pop.addClass('active');
+	$('#popup').addClass('active');
 }
 var vid = document.getElementById("video");
 function playVid() { 
@@ -16,7 +14,10 @@ function pauseVid() {
 	$('#stats .text').fadeIn(300);
     vid.pause(); 
 }
-
+function scrollTo(target) {
+	if ($(target).offset()) $('html, body').animate({scrollTop: $(target).offset().top}, 500);
+	else console.warn('No block found!')
+}
 
 $(document).ready(function(){
 
@@ -40,6 +41,10 @@ $(document).ready(function(){
 		variableWidth: true,
 		slidesToScroll: 1
 	});
+	$("#recent .more").on('click', function(){
+		scrollTo('#portfolio');
+		showPop();
+	});
 	$('.toggle').on('click',function(){
 		$(this).toggleClass('active');
 		$(this).siblings('.dropdown').toggleClass('active');
@@ -48,10 +53,8 @@ $(document).ready(function(){
 	$(document).on('keyup', function(e){if (e.keyCode == 27) closePop(e)});
 	$(document).on('click','a[href ^= "#"]',function(e){
 		e.preventDefault();
-		var target = $(this).attr('href');
-		if ($(target).offset()) $('html, body').animate({scrollTop: $(target).offset().top}, 500);
-		else console.warn('No block found!')
+		scrollTo($(this).attr('href'));
 	});
-	$('.popup .close').on('click',closePop);
+	$(document).on('click', '.close', closePop);
 
 });
