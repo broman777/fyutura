@@ -495,7 +495,7 @@ img {
 		.img {
 			margin-bottom: 16px;
 		}
-		img, p, .soc {
+		img, p {
 			position: relative;
 			z-index: 10;
 		}
@@ -505,6 +505,21 @@ img {
 		}
 		.position {
 			font-size: 12px;
+		}
+		.soc {
+			position: absolute;
+			bottom: 13px;
+			right: 48px;
+			z-index: 20;
+			a {
+				margin-left: 6px;
+			}
+			.fb {
+				@include sprite('soc_fb');
+			}
+			.in {
+				@include sprite('soc_in');
+			}
 		}
 	}
 }
@@ -1019,9 +1034,6 @@ footer {
 		#team {
 			margin-right: 0;
 			padding-bottom: 90px;
-			.img {
-				
-			}
 		}
 	}
 	#stats {
