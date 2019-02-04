@@ -5,6 +5,7 @@
 @import "icons";
 @import "slick";
 @import "menu";
+@import "mCustomScrollbar";
 
 html, body {
 	height: 100%;
@@ -15,6 +16,9 @@ body {
 	letter-spacing: 0.01em;
 	overflow: auto;
 	overflow-x: hidden;
+}
+a {
+	margin: 0;
 }
 button {background-color: #fff;}
 section {
@@ -333,6 +337,7 @@ img {
 				a {
 					text-decoration: underline;
 					color:#fff;
+					margin: 0;
 					&:hover {
 						text-decoration: none;
 					}

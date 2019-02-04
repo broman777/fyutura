@@ -34,7 +34,6 @@ $(document).ready(function(){
 		autoplaySpeed: 3000
 	});
 	$('#feedbacks').on('init beforeChange', function(){
-		closePop();
 		$('#timer').removeClass('finished');
 		setTimeout("$('#timer').addClass('finished');", 10);
 	});
@@ -61,6 +60,7 @@ $(document).ready(function(){
 	});
 	$(document).on('click', '.close', closePop);
 	$('#hamburger').on('click', toggleMenu);
+	$('.custom-scroll').mCustomScrollbar();
 });
 $(window).on('scroll', function(){
 	if ($(document).scrollTop() > 40) $('header').addClass('fixed');
