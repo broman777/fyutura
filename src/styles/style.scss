@@ -36,6 +36,14 @@ header {
 	right: 0;
 	z-index: 200;
 	padding: 56px 0 16px 0 240px;
+	transform: translate(0,-120px);
+	transition: 0.3s ease-out;
+	&.fixed {
+		transform: translate(0,-40px)!important;
+	}
+	&.active {
+		transform: translate(0,0);
+	}
 	.logo {
 		display: inline-block;
 		vertical-align: top;
@@ -166,6 +174,9 @@ img {
 			display: inline-block;
 			vertical-align: top;
 			margin-left: 52px;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }

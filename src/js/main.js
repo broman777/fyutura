@@ -20,7 +20,7 @@ function scrollTo(target) {
 }
 
 $(document).ready(function(){
-	$('header').addClass('active');
+	setTimeout("$('header').addClass('active');", 400);
 	$('#recent').slick({
 		arrows: false,
 		dots: true
@@ -59,3 +59,7 @@ $(document).ready(function(){
 	$(document).on('click', '.close', closePop);
 
 });
+$(window).on('scroll', function(){
+	if ($(document).scrollTop() > 40) $('header').addClass('fixed');
+	else $('header').removeClass('fixed');
+})
