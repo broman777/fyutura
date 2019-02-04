@@ -30,9 +30,9 @@ $(document).ready(function(){
 		autoplay: true,
 		autoplaySpeed: 3000
 	});
-	$('#feedbacks').on('beforeChange', function(){
+	$('#feedbacks').on('init beforeChange', function(){
 		closePop();
-		$('#timer').removeClass('finished')
+		$('#timer').removeClass('finished');
 		setTimeout("$('#timer').addClass('finished');", 10);
 	});
 	$('#play').click(playVid);

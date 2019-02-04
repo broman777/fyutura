@@ -181,6 +181,17 @@ img {
 		}
 	}
 }
+.w-line:before {
+	content:'';
+	display: block;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 239px;
+	background-color: #fff;
+	z-index: 1;
+}
 #how {
 	background: $bg;
 	.scroll {
@@ -193,6 +204,8 @@ img {
 		background: #fff;
 	}
 	.video {
+		position: relative;
+		z-index: 2;
 		margin-left: 2*$padding;
 		video {
 			display: block;
@@ -253,10 +266,13 @@ img {
 #portfolio {
 	min-height: 560px;
 	height: 100%;
+	&:before {
+		background-color: $bg;
+	}
 	#heading {
 		position: absolute;
 		top: 67px;
-		left: 220px;
+		left: 240px;
 		z-index: 15;
 	}
 	.inner {
@@ -347,11 +363,11 @@ img {
 		.slide {
 			height: 100%;
 			position: relative;
-			padding-left: 220px;
+			padding-left: 170px;
 			.text {
 				position: absolute;
 				top: 264px;
-				left: 220px;
+				left: 240px;
 				right: 45%;
 				padding-right: 50px;
 			}
@@ -423,6 +439,9 @@ img {
 	background: url(../img/team.png) no-repeat 0 50% #000;
 	color: #fff;
 	padding-bottom: 153px;
+	&:before {
+		background-color: #313131;
+	}
 	.section-title:before {
 		background: #fff;
 	}
@@ -484,7 +503,11 @@ img {
 }
 #stats {
 	overflow: visible;
+	&:before {
+		background-color: #e5e8f1;
+	}
 	.video {
+		z-index: 5;
 		position: relative;
 		margin: -153px 0 88px;
 		video {
