@@ -979,6 +979,7 @@ footer {
 		}
 	}
 	#stats {
+		overflow: hidden;
 		.video {
 			margin: 0 0-$mobPadding 94px;
 			.text {
@@ -996,7 +997,115 @@ footer {
 			}
 		}
 		.feed-list {
-			padding-right: 56px;
+			padding: 0 0 56px;
+			.slide p {
+				line-height: 1.6em;
+			}
+			#timer {
+				bottom: 0;
+				right: 0;
+			}
+			#feed-next {
+				position: absolute;
+				top: auto;
+				bottom: -40px;
+				margin: 0;
+				left: 0;
+				right: auto;
+			}
+		}
+		#ach {
+			margin-top: 72px;
+			.left, .right {
+				float: none;
+				width: 100%;
+			}
+			.right {
+				padding-top: 64px;
+				.digit {
+					font-size: 48px;
+				}
+				li {
+					margin-bottom: 28px;
+				}
+				.upwork {
+					margin: 35px 0-$mobPadding 0;
+					width: auto;
+					position: relative;
+					z-index: 10;
+				}
+			}
+		}
+	}
+	#tech {
+		margin-right: 0;
+		padding: 70px $mobPadding;
+		margin: 0 0-$mobPadding;
+		width: auto;
+		.header {
+			margin-bottom: 6px!important;
+		}
+		.tech-list {
+			margin: 0 0-$mobPadding;
+			li {
+				height: 75px;
+			}
+		}
+	}
+	#contacts {
+		.wrap {
+			padding: 0;
+			.inner {
+				padding:96px $mobPadding 70px;
+			}
+			.header {
+				font-size: 30px;
+			}
+			form {
+				padding: 0;
+				margin-right: 0;
+				width: auto;
+			}
+		}
+		#addr {
+			position: relative;
+			top: auto;
+			right: auto;
+			left: auto;
+			width: 100%;
+			margin-left: 0;
+			height: 418px;
+			#coord li {
+				padding-bottom: 18px;
+				border-bottom: 1px solid #252525;
+				&:before {
+					height: 5px;
+				}
+			}
+		}
+	}
+	footer {
+		padding: 48px 0;
+		text-align: center;
+		.cont {
+			display: block;
+			width: 100%;
+			li {
+				margin: 0 0 14px;
+				display: block;
+				width: 100%;
+				.email:after {
+					display: none;
+				}
+				a {
+					display: inline-block;
+					vertical-align: top;
+				}
+			}
+		}
+		.copyright {
+			float: none;
+			width: 100%;
 		}
 	}
 }
