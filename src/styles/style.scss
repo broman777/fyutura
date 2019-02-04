@@ -855,3 +855,148 @@ footer {
 		}
 	}
 }
+@media screen and (max-width: 1023px) {
+	.w-line:before {
+		left: 24px;
+	}
+	.dt-only {
+		display: none;
+	}
+	section {
+		min-width: 0;
+	}
+	header {
+		min-width: 0;
+		transform: translate(0,0)!important;
+		padding: 29px 0;
+
+	}
+	.wrap {
+		padding: 0 $mobPadding;
+	}
+	.inner {
+		padding-left: 0;
+	}
+	.header {
+		font-size: 30px;
+		line-height: 36px;
+	}
+	#top {
+		padding: 121px 0 50px;
+		.header {
+			margin-bottom: 18px;
+		}
+		.top-hint {
+			margin-bottom: 33px;
+		}
+	}
+	#how {
+		.header {
+			margin-bottom: 34px;
+		}
+		.workflow {
+			ol {
+				min-width: 0;
+				width: auto;
+				margin-left: 44px;
+				li {
+					font-size: 14px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.video {
+			margin-left: $mobPadding;
+		}
+		.scroll {
+			width: 25px;
+			.c-scroll-icon {
+				display: none;
+			}
+		}
+	}
+	.section-title {
+		margin-left: 0-$mobPadding;
+		padding-left: $mobPadding;
+		margin-bottom: 26px;
+		&:before {
+			width: 10px;
+		}
+	}
+	#portfolio {
+		min-height: 0;
+		#heading {
+			left: 25px;
+		}
+		.subheader {
+			font-size: 18px;
+			line-height: 1.5em;
+		}
+		#recent {
+			.slick-dots {
+				left: 25px;
+				right: 25px;
+				bottom: 25px;
+			}
+			.slide {
+				padding-left: 0;
+				.text {
+					position: relative;
+					padding: 157px $mobPadding 38px;
+					left: auto;
+					top: auto;
+					right: auto;
+					max-width: 80%;
+				}
+				.btn {
+					display: none;
+				}
+			}
+			.img {
+				margin: 0 0 0 $mobPadding;
+				padding: 25px;
+				height: 300px;
+			}
+		}
+	}
+	#about {
+		background: #000;
+		padding-bottom: 0;
+		.info {
+			display: block;
+			padding-bottom: 45px;
+			.text {
+				padding-top: 25px;
+				width: 80%;
+			}
+		}
+		#team {
+			margin-right: 0;
+			padding-bottom: 90px;
+			.img {
+				
+			}
+		}
+	}
+	#stats {
+		.video {
+			margin: 0 0-$mobPadding 94px;
+			.text {
+				padding: 0 $mobPadding*2;
+			}
+		}
+		.inner {
+			.bg {
+				top: 0;
+				right: auto;
+				left: 50%;
+			}
+			.header {
+				margin-bottom: 40px;
+			}
+		}
+		.feed-list {
+			padding-right: 56px;
+		}
+	}
+}
