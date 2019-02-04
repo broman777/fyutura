@@ -20,7 +20,7 @@ function scrollTo(target) {
 }
 
 $(document).ready(function(){
-
+	$('header').addClass('active');
 	$('#recent').slick({
 		arrows: false,
 		dots: true
@@ -31,8 +31,9 @@ $(document).ready(function(){
 		autoplaySpeed: 3000
 	});
 	$('#feedbacks').on('beforeChange', function(){
-	  $('#timer').removeClass('finished')
-	  setTimeout("$('#timer').addClass('finished');", 10);
+		closePop();
+		$('#timer').removeClass('finished')
+		setTimeout("$('#timer').addClass('finished');", 10);
 	});
 	$('#play').click(playVid);
 	$('#video').click(pauseVid);
