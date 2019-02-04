@@ -18,6 +18,9 @@ function scrollTo(target) {
 	if ($(target).offset()) $('html, body').animate({scrollTop: $(target).offset().top}, 500);
 	else console.warn('No block found!')
 }
+function toggleMenu() {
+	$('#hamburger, #menu').toggleClass('active');
+}
 
 $(document).ready(function(){
 	setTimeout("$('header').addClass('active');", 400);
@@ -57,7 +60,7 @@ $(document).ready(function(){
 		scrollTo($(this).attr('href'));
 	});
 	$(document).on('click', '.close', closePop);
-
+	$('#hamburger').on('click', toggleMenu);
 });
 $(window).on('scroll', function(){
 	if ($(document).scrollTop() > 40) $('header').addClass('fixed');

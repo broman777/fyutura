@@ -1,20 +1,20 @@
 $sprite: (
 	dou_black: (
-		offset-x: 0px,
+		offset-x: -24px,
 		offset-y: -22px,
 		width: 34px,
 		height: 12px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 	dou_white: (
-		offset-x: -36px,
+		offset-x: -60px,
 		offset-y: -22px,
 		width: 34px,
 		height: 12px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 	logo: (
@@ -23,43 +23,52 @@ $sprite: (
 		width: 125px,
 		height: 20px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 	soc_fb: (
 		offset-x: -66px,
-		offset-y: -36px,
+		offset-y: -46px,
 		width: 8px,
 		height: 15px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 	soc_in: (
 		offset-x: -48px,
-		offset-y: -36px,
+		offset-y: -46px,
 		width: 16px,
 		height: 15px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
+		image: '../img/ui/sprite.png'
+	),
+	tel: (
+		offset-x: 0px,
+		offset-y: -22px,
+		width: 22px,
+		height: 22px,
+		total-width: 125px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 	up_black: (
 		offset-x: 0px,
-		offset-y: -36px,
+		offset-y: -46px,
 		width: 22px,
 		height: 16px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 	up_white: (
 		offset-x: -24px,
-		offset-y: -36px,
+		offset-y: -46px,
 		width: 22px,
 		height: 16px,
 		total-width: 125px,
-		total-height: 52px,
+		total-height: 62px,
 		image: '../img/ui/sprite.png'
 	),
 );

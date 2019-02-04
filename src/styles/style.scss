@@ -4,6 +4,7 @@
 @import "sprite";
 @import "icons";
 @import "slick";
+@import "menu";
 
 html, body {
 	height: 100%;
@@ -13,6 +14,7 @@ body {
 	font: 400 14px/1.43em $font, $ss;
 	letter-spacing: 0.01em;
 	overflow: auto;
+	overflow-x: hidden;
 }
 button {background-color: #fff;}
 section {
@@ -856,11 +858,14 @@ footer {
 	}
 }
 @media screen and (max-width: 1023px) {
-	.w-line:before {
-		left: 24px;
+	.mob {
+		display: block;
 	}
 	.dt-only {
 		display: none;
+	}
+	.w-line:before {
+		left: 24px;
 	}
 	section {
 		min-width: 0;
@@ -868,8 +873,44 @@ footer {
 	header {
 		min-width: 0;
 		transform: translate(0,0)!important;
-		padding: 29px 0;
-
+		padding: 34px 0 14px;
+		.logo {
+			position: relative;
+			display: block;
+			margin: 0 auto;
+			z-index: 150;
+		}
+		&.fixed {
+			transform: translate(0,0)!important;
+		}
+		.mob {
+			position: absolute;
+			top: 0;
+			right: $mobPadding;
+			left: $mobPadding;
+			z-index: 110;
+		}
+	}
+	#menu {
+		display: block;
+		position: fixed;
+		top: 0; 
+		padding: 110px $mobPadding 40px;
+		background-color: #fff;
+		transition: 0.4s ease-out;
+		transform: translate(100%,0);
+		height: 100%;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		a {
+			display: block;
+			width: 100%;
+			margin: 0 0 10px;
+		}
+		&.active {
+			transform: translate(0,0);
+		}
 	}
 	.wrap {
 		padding: 0 $mobPadding;
@@ -983,7 +1024,10 @@ footer {
 		.video {
 			margin: 0 0-$mobPadding 94px;
 			.text {
-				padding: 0 $mobPadding*2;
+				padding: 0 $mobPadding;
+				.header {
+					margin-bottom: 16px;
+				}
 			}
 		}
 		.inner {
