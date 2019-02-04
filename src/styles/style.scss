@@ -35,7 +35,7 @@ header {
 	left: 0;
 	right: 0;
 	z-index: 200;
-	padding: 56px 0 16px 0 240px;
+	padding: 56px 0 14px 0 240px;
 	transform: translate(0,-120px);
 	transition: 0.3s ease-out;
 	&.fixed {
@@ -816,5 +816,18 @@ footer {
 	}
 	.copyright {
 		float: right;
+	}
+}
+@media screen and (max-width: 1170px) {
+	header {
+		nav a {
+			margin-left: 34px;
+		}
+		.social {
+			padding-left: 0;
+			&:before {
+				display: none;
+			}
+		}
 	}
 }
