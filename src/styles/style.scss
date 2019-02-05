@@ -213,10 +213,11 @@ img {
 		position: relative;
 		z-index: 2;
 		margin-left: 2*$padding;
-		video {
+		video, img {
 			display: block;
 			width: 100%;
 		}
+		img {display: none;}
 	}
 	.inner {
 		padding-top: 63px;
@@ -969,6 +970,8 @@ footer {
 		}
 		.video {
 			margin-left: $mobPadding;
+			video {display: none;}
+			img {display: block;}
 		}
 		.scroll {
 			width: 25px;

@@ -21,8 +21,15 @@ function scrollTo(target) {
 function toggleMenu() {
 	$('#hamburger, #menu').toggleClass('active');
 }
-
+function toggleVideo(max) {
+	var vid = $('#autoplay'),
+		res = $(window).width();
+	if (res >= 1024) vid.attr('src', vid.data('src'));
+	else vid.removeAttr('src');
+}
+$(window).resize(toggleVideo);
 $(document).ready(function(){
+	toggleVideo();
 	setTimeout("$('header').addClass('active');", 400);
 	$('#recent').slick({
 		arrows: false,
