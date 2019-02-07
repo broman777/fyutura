@@ -11,7 +11,10 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
-body {
+h1 {
+	text-transform: none;
+}
+body { 
 	font: 400 14px/1.43em $font, $ss;
 	letter-spacing: 0.01em;
 	overflow: auto;
