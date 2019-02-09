@@ -126,13 +126,71 @@ header {
 	font-weight: bold;
 	font-size: 10px;
 	height: 45px;
-	transition: 0.2s ease;
+	position: relative;
+	letter-spacing: 0.1em;
 	&.green {
 		border-color: $green;
 		color: $green;
+		&:before, &:after,
+		span:before, span:after {
+			background-color: $green;
+		}
+	}
+	&:before {
+		position: absolute;
+		content:'';
+		width: 0;
+		top: 0;
+		left: 0;
+		height: 2px;
+		background-color: #000;
+		transition: 0.15s linear;
+	}
+	&:after {
+		position: absolute;
+		content:'';
+		width: 2px;
+		top: 0;
+		right: 0;
+		height: 0;
+		background-color: #000;
+		transition: 0.05s linear 0.15s;
+	}
+	span {
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		&:before {
+			position: absolute;
+			content:'';
+			width: 0;
+			bottom: 0;
+			right: 0;
+			height: 2px;
+			background-color: #000;
+			transition: 0.15s linear 0.2s;
+		}
+		&:after {
+			position: absolute;
+			content:'';
+			width: 2px;
+			bottom: 0;
+			left: 0;
+			height: 0;
+			background-color: #000;
+			transition: 0.05s linear 0.35s;
+		}
 	}
 	&:hover {
-		border-width: 3px;
+		&:before, span:before {
+			width: 100%;
+		}
+		&:after, span:after {
+			height: 100%;
+		}
 	}
 }
 .header {
@@ -463,12 +521,25 @@ img {
 		.text {
 			width: 50%;
 			line-height: 1.6em;
-			padding-top: 150px;
+			margin-top: 150px;
+			position: relative;
+			&:before {
+				top: 0;
+				left: 0;
+				content:'';
+				position: absolute;
+				height: 150px;
+				width: 1px;
+				background-color: #313131;
+			}
 		}
 	}
 	#team {
 		margin-right: -100px;
 		padding-bottom: 140px;
+		.slick-list {
+			overflow: visible;
+		}
 		.slick-slide {
 			outline: none;
 			position: relative;
@@ -556,11 +627,13 @@ img {
 				max-width: 496px;
 				margin-bottom: 36px;
 			}
-			.btn {
+			#play {
 				position: relative;
 				border-color: #fff;
 				background-color: #fff;
 				cursor: pointer;
+				overflow: hidden;
+				border: 0;
 				&:hover:before {
 					width: 70px;
 				}
@@ -569,18 +642,21 @@ img {
 					position: absolute;
 					top: 50%;
 					left: 100%;
-					margin-left: -66px;
+					margin-left: -68px;
 					width: 0;
+					height: 0;
 					transition: 0.2s ease;
 					height: 1px;
+					margin-top: -1px;
 					background-color: #000;
 				}
 				&:after {
+					position: relative;
 					content:'';
 					margin-left: 10px;
 					display: inline-block;
-					width: 0;
-					height: 0;
+					height: 0!important;
+					background-color: transparent;
 					border-style: solid;
 					border-width: 4.5px 0 4.5px 7px;
 					border-color: transparent transparent transparent #000000;
@@ -622,15 +698,29 @@ img {
 			width: 50%;
 		}
 		.right {
-			padding-top: 8px;
-			li {
-				margin-bottom: 44px;
+			padding: 8px 0 0 1px;
+			border-left: 1px solid #e5e8f1;
+			ul {
+				position: relative;
+				overflow: hidden;
+				li {
+					margin-bottom: 45px;
+					transform: translate(-100%,0);
+					transition: transform 0.6s ease-out;
+					&:nth-child(2) {transition-delay: 0.15s;}
+					&:nth-child(3) {transition-delay: 0.3s;}
+					&:nth-child(4) {transition-delay: 0.45s;}
+					&:nth-child(5) {transition-delay: 0.6s;}
+				}
+				&.animated li{
+					transform: translate(0,0);
+				}
 			}
 			.digit {
 				font-size: 72px;
 				font-weight: bold;
 				line-height: 1em;
-				margin-bottom: 5px;
+				margin: 0 0 5px -5px;
 			}
 			.upwork {
 				margin-top: 64px;
@@ -699,12 +789,53 @@ img {
 			background-position: 50% 50%;
 			display: inline-block;
 			vertical-align: top;
+			transform: translate(0,80px);
+			transition: 0.3s ease-out;
+			opacity: 0;
+			&:nth-child(2) {transition-delay: 0.1s}
+			&:nth-child(3) {transition-delay: 0.15s}
+			&:nth-child(4) {transition-delay: 0.2s}
+			&:nth-child(5) {transition-delay: 0.25s}
+			&:nth-child(6) {transition-delay: 0.3s}
+			&:nth-child(7) {transition-delay: 0.35s}
+			&:nth-child(8) {transition-delay: 0.4s}
+			&:nth-child(9) {transition-delay: 0.45s}
+			&:nth-child(10) {transition-delay: 0.5s}
+			&:nth-child(11) {transition-delay: 0.55s}
+			&:nth-child(12) {transition-delay: 0.6s}
+			&:nth-child(13) {transition-delay: 0.65s}
+			&:nth-child(14) {transition-delay: 0.7s}
+			&:nth-child(15) {transition-delay: 0.75s}
+		}
+		&.animated li{
+			transform: translate(0,0);
+			opacity: 1;
 		}
 	}
 }
 #contacts {
-	background-color: #000;
+	background-color: #0d0d0d;
 	color: #fff;
+	&:before {
+		width: 140px;
+		height: 140px;
+		display: block;
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+	}
+	.section-title {
+		position: absolute;
+		transform: rotate(-90deg);
+		top: 100%;
+		margin-top: -92px;
+		left: 87px;
+		&:before {
+			background-color: #fff;
+		}
+	}
 	.inner {
 		position: relative;
 		background-color: #252525;
@@ -763,6 +894,10 @@ img {
 			background-color: transparent;
 			color: #fff;
 			border-color: #fff;
+			&:before, &:after,
+			span:before, span:after {
+				background-color: #fff;
+			}
 		}
 	}
 	#addr {
@@ -811,7 +946,7 @@ img {
 					right: -1px;
 					left: 0;
 					height: 7px;
-					background-color: #000;
+					background-color: #0d0d0d;
 				}
 				&.active {
 					cursor: default;
@@ -826,7 +961,7 @@ img {
 	}
 }
 footer {
-	background-color: #000;
+	background-color: #0d0d0d;
 	color: #fff;
 	padding: 60px 0;
 	.cont {
@@ -1035,8 +1170,9 @@ footer {
 			display: block;
 			padding-bottom: 45px;
 			.text {
-				padding-top: 25px;
+				margin-top: 25px;
 				width: 80%;
+				border: none;
 			}
 		}
 		#team {
@@ -1122,6 +1258,8 @@ footer {
 		}
 	}
 	#contacts {
+		&:before,
+		.section-title {display: none;}
 		.wrap {
 			padding: 0;
 			.inner {

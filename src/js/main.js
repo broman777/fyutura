@@ -27,6 +27,15 @@ function toggleVideo(max) {
 	if (res >= 1024) vid.attr('src', vid.data('src'));
 	else vid.removeAttr('src');
 }
+function animateVisible(e, a) {
+    var t = $(document).scrollTop()
+      , i = $(window).height();
+    $(e).each(function(e, o) {
+        var n, s = parseInt($(o).offset().top), d = parseInt($(o).height());
+        n = $(o).data("shift") > 0 ? parseInt($(o).data("shift")) : a,
+        t + i - n > s && t < s + d + n && $(o).addClass("animated")
+    })
+}
 $(window).resize(toggleVideo);
 $(document).ready(function(){
 	toggleVideo();
@@ -70,6 +79,7 @@ $(document).ready(function(){
 	$('.custom-scroll').mCustomScrollbar();
 });
 $(window).on('scroll', function(){
+	animateVisible(".animate", 80);
 	if ($(document).scrollTop() > 40) $('header').addClass('fixed');
 	else $('header').removeClass('fixed');
 })
