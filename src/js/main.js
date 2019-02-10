@@ -15,7 +15,11 @@ function pauseVid() {
     vid.pause(); 
 }
 function scrollTo(target) {
-	if ($(target).offset()) $('html, body').animate({scrollTop: $(target).offset().top}, 500);
+	if ($(target).offset()) {
+		var to = $(target).offset().top;
+		if (target == '#portfolio') to = to-80;
+		$('html, body').animate({scrollTop: to}, 500);
+	}
 	else console.warn('No block found!')
 }
 function toggleMenu() {
@@ -39,7 +43,10 @@ function animateVisible(e, a) {
 $(window).resize(toggleVideo);
 $(document).ready(function(){
 	toggleVideo();
-	setTimeout("$('header').addClass('active');", 400);
+	setTimeout(function(){
+		$('header').addClass('active');
+		$('#top .header, #top .top-hint, #top .btn').addClass('animated');
+	}, 400);
 	$('#recent').slick({
 		arrows: false,
 		dots: true
@@ -79,7 +86,7 @@ $(document).ready(function(){
 	$('.custom-scroll').mCustomScrollbar();
 });
 $(window).on('scroll', function(){
-	animateVisible(".animate", 80);
+	animateVisible(".animate, .header, .btn", 80);
 	if ($(document).scrollTop() > 40) $('header').addClass('fixed');
 	else $('header').removeClass('fixed');
 })
