@@ -266,6 +266,7 @@ img {
 		top: 100%;
 		margin-top: -92px;
 		left: 87px;
+		color: #fff;
 		&:before {
 			background-color: #fff;
 		}
@@ -445,7 +446,12 @@ img {
 #portfolio {
 	min-height: 560px;
 	height: 100%;
-	height: calc(100% - 80px);
+	height: calc(100% - 80px)!important;
+	.panel {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+	}
 	&:before {
 		background-color: $bg;
 	}
@@ -625,11 +631,22 @@ img {
 	}
 }
 #about {
-	background: url(../img/team.png) no-repeat 0 50% #000;
+	//background: url(../img/team.png) no-repeat 0 50% #000;
+	#bg {
+		background-color: #000;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		z-index: 1;
+	}
 	color: #fff;
-	padding-bottom: 153px;
+	padding-bottom: 293px;
 	&:before {
 		background-color: #313131;
+		z-index: 5;
 	}
 	.section-title:before {
 		background: #fff;
@@ -638,12 +655,16 @@ img {
 		padding: 66px 0 140px;
 		display: flex;
 		justify-content: space-between;
+		.header, .section-title {
+			position: relative;
+			z-index: 3;
+		}
 		.text {
 			width: 50%;
-			height: 150px;
 			line-height: 1.6em;
 			margin-top: 150px;
 			position: relative;
+			z-index: 2;
 			overflow: hidden;
 			&:before {
 				top: 0;
@@ -662,7 +683,7 @@ img {
 			}
 			&.animated {
 				&:before {
-					height: 100%;
+					height: 150px;
 				}
 				p {
 					transform: translate(0,0);
@@ -671,8 +692,9 @@ img {
 		}
 	}
 	#team {
+		position: relative;
+		z-index: 10;
 		margin-right: -100px;
-		padding-bottom: 140px;
 		.slick-list {
 			overflow: visible;
 		}
@@ -742,7 +764,8 @@ img {
 	.video {
 		z-index: 5;
 		position: relative;
-		margin: -153px 0 88px;
+		margin: -153px auto 88px;
+		max-width: 1156px;
 		video {
 			display: block;
 			width: 100%;
