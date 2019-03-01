@@ -37,8 +37,12 @@ section {
 .inner {
 	padding-left: 100px;
 }
+.animate {
+	will-change: transform;
+	transform: translate3d(0,0,0);
+}
 .shadow {
-	transition: 0.6s ease-out;
+	transition: 0.8s ease-out;
 	transform: translate(0, 60px);
 	opacity: 0;
 	&.animated {
@@ -138,7 +142,7 @@ header {
 	position: relative;
 	letter-spacing: 0.1em;
 	opacity: 0;
-	transition: 0.6s ease-out 0.3s;
+	transition: 0.8s ease-out 0.3s;
 	&.animated {
 		opacity: 1;
 	}
@@ -213,9 +217,9 @@ header {
 	position: relative;
 	overflow: hidden;
 	span {
-		transform: translate(-100%, 0);
+		transform: translate(-800px, 0);
 		display: block;
-		transition: 0.6s ease-out 0.2s;
+		transition: 0.8s ease-out 0.2s;
 	}
 	&.animated span {
 		transform: translate(0, 0);
@@ -239,7 +243,7 @@ img {
 		overflow: hidden;
 		position: relative;
 		text-indent: -300px;
-		transition: 0.6s ease-out 0.2s;
+		transition: 0.8s ease-out 0.2s;
 	}
 	&.animated {
 		span {
@@ -289,8 +293,8 @@ img {
 		span {
 			display: block;
 			position: relative;
-			transform: translate(-100%, 0);
-			transition: 0.6s ease-out 0.3s;
+			transform: translate(-800px, 0);
+			transition: 0.8s ease-out 0.3s;
 		}
 		&.animated span {
 			transform: translate(0, 0);
@@ -407,7 +411,7 @@ img {
 		 	padding-left: 42px;
 		 	min-height: 25px;
 		 	transition: 0.3s ease-out 0.1s;
-			transform: translate(-100%,0);
+			transform: translate(-800px,0);
 			&:nth-child(2) {transition-delay: 0.15s;}
 			&:nth-child(3) {transition-delay: 0.2s;}
 			&:nth-child(4) {transition-delay: 0.25s;}
@@ -471,8 +475,8 @@ img {
 		}
 	}
 	#popup {
-		transition: 0.6s ease-in;
-		transform: translate(-100%,0);
+		transition: 0.8s ease-in;
+		transform: translate(-1600px,0);
 		z-index: 20;
 		position: absolute;
 		top: 0;
@@ -559,8 +563,8 @@ img {
 				padding-right: 50px;
 				overflow: hidden;
 				&>p, &>span {
-					transform: translate(-100%,0);
-					transition: 0.6s ease-out;
+					transform: translate(-800px,0);
+					transition: 0.8s ease-out;
 				}
 				&.animated {
 					p, span {transform: translate(0,0);}
@@ -678,8 +682,8 @@ img {
 			}
 			p {
 				position: relative;
-				transition: 0.6s ease-out 0.3s;
-				transform: translate(-100%,0);
+				transition: 0.8s ease-out 0.3s;
+				transform: translate(-800px,0);
 			}
 			&.animated {
 				&:before {
@@ -865,7 +869,7 @@ img {
 				overflow: hidden;
 				li {
 					margin-bottom: 45px;
-					transform: translate(-100%,0);
+					transform: translate(-800px,0);
 					transition: transform 0.6s ease-out;
 					&:nth-child(2) {transition-delay: 0.15s;}
 					&:nth-child(3) {transition-delay: 0.3s;}
@@ -1012,12 +1016,12 @@ img {
 			height: 51px;
 			padding-left: 100px;
 			border-bottom: 1px solid #676767;
-			transform: translate(0, -100%);
-			transition: 0.3s ease-out;
+			transform: translate(0, -60px);
+			transition: 0.5s ease-out;
 			opacity: 0;
-			&:nth-child(2) {transition-delay: 0.2s}
-			&:nth-child(3) {transition-delay: 0.4s}
-			&:nth-child(4) {transition-delay: 0.6s}
+			&:nth-child(2) {transition-delay: 0.1s}
+			&:nth-child(3) {transition-delay: 0.2s}
+			&:nth-child(4) {transition-delay: 0.3s}
 			input {
 				height: 51px;
 				width: 100%;
