@@ -102,8 +102,7 @@ $(document).on('submit','form',function(){ // перехватываем все 
 		  },
 		success: function(data){ // событие после удачного обращения к серверу и получения ответа
 		    alert('Спасибо, мы скоро с Вами свяжемся!');
-		    form.find('input, textarea').val('');
-		    closePop();
+		    form.find('input').val('');
 		 },
 		complete: function(data) { // событие после любого исхода
 		    form.find('button').prop('disabled', false); // в любом случае включим кнопку обратно
