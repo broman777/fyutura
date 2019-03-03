@@ -213,7 +213,7 @@ header {
 }
 .header {
 	font-size: 68px;
-	line-height: 72px;
+	line-height: 78px;
 	position: relative;
 	overflow: hidden;
 	span {
@@ -423,14 +423,17 @@ img {
 			&::before {
 				counter-increment: section;
 				content: counters(section,".") " ";
+				display: flex;
+				position: absolute;
+				justify-content: center;
+				align-items: center;
 				width: 25px;
-				line-height: 25px;
+				height: 25px;
 				font-size: 14px;
+				line-height: 14px;
 				border-radius: 50%;
 				background-color: #000;
 				color: #fff;
-				display: block;
-				position: absolute;
 				top: 0;
 				left: 0;
 		 		text-align: center;
@@ -635,7 +638,6 @@ img {
 	}
 }
 #about {
-	//background: url(../img/team.png) no-repeat 0 50% #000;
 	#bg {
 		background-color: #000;
 		position: absolute;
@@ -830,7 +832,7 @@ img {
 	.inner {
 		position: relative;
 		.header {
-			max-width: 560px;
+			max-width: 660px;
 			margin-bottom: 70px;
 			position: relative;
 			z-index: 10;
@@ -884,7 +886,7 @@ img {
 				font-size: 72px;
 				font-weight: bold;
 				line-height: 1em;
-				margin: 0 0 5px -5px;
+				margin: 0 0 5px -3px;
 			}
 			.upwork {
 				margin-top: 64px;
@@ -1019,6 +1021,7 @@ img {
 			transform: translate(0, -60px);
 			transition: 0.5s ease-out;
 			opacity: 0;
+			cursor: text;
 			&:nth-child(2) {transition-delay: 0.1s}
 			&:nth-child(3) {transition-delay: 0.2s}
 			&:nth-child(4) {transition-delay: 0.3s}
@@ -1026,10 +1029,9 @@ img {
 				height: 51px;
 				width: 100%;
 				border: none;
-				background-color: transparent;
+				background: transparent!important;
 				outline: none;
 				border-radius: 0!important;
-				-webkit-apperance: none;
 				font-family: $font, $ss;
 				font-size: 12px;
 				color: #fff;
@@ -1044,10 +1046,11 @@ img {
 				}
 			}
 			span {
+				display: block;
 				position: absolute;
 				top: 0;
 				left: 0;
-				width: 100px;
+				width: 100%;
 				line-height: 50px;
 				font-size: 10px;
 				text-transform: uppercase;
@@ -1117,10 +1120,6 @@ img {
 				&.active {
 					cursor: default;
 					color: #fff;
-					&:before {
-						background: url(../img/map.png) no-repeat 0 90%;
-						background-size: 100% auto;
-					}
 				}
 			}
 		}

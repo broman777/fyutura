@@ -16,9 +16,11 @@ function pauseVid() {
 }
 function scrollTo(target) {
 	if ($(target).offset()) {
-		var to = $(target).offset().top;
+		var to = $(target).offset().top,
+			distance = parseInt(to - $(document).scrollTop());
+		if (distance < 0) distance = 0-distance;
 		if (target == '#portfolio') to = to-80;
-		$('html, body').animate({scrollTop: to}, 500);
+		$('html, body').animate({scrollTop: to}, 300 + distance*0.2);
 	}
 	else console.warn('No block found!')
 }
@@ -80,10 +82,34 @@ $(document).ready(function(){
 	$(document).on('click','a[href ^= "#"]',function(e){
 		e.preventDefault();
 		scrollTo($(this).attr('href'));
+		$('#hamburger, #menu').removeClass('active');
 	});
 	$(document).on('click', '.close', closePop);
 	$('#hamburger').on('click', toggleMenu);
 	$('.custom-scroll').mCustomScrollbar();
+});
+
+$(document).on('submit','form',function(){ // перехватываем все при событии отправки
+	var form = $(this), // запишем форму, чтобы потом не было проблем с this
+		data = form.serialize(); // подготавливаем данные
+	$.ajax({ // инициализируем ajax запрос
+		type: 'POST',
+		url: "send.php",
+		dataType: 'json', 
+		data: data,
+		beforeSend: function(data) { // событие до отправки
+		    form.find('button').attr('disabled', 'disabled');
+		  },
+		success: function(data){ // событие после удачного обращения к серверу и получения ответа
+		    alert('Спасибо, мы скоро с Вами свяжемся!');
+		    form.find('input, textarea').val('');
+		    closePop();
+		 },
+		complete: function(data) { // событие после любого исхода
+		    form.find('button').prop('disabled', false); // в любом случае включим кнопку обратно
+		 }
+	});
+	return false
 });
 $(window).on('scroll', function(){
 	animateVisible(".animate, .header, .btn", 80);
