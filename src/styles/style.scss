@@ -1333,6 +1333,9 @@ footer {
 	#portfolio {
 		min-height: 0;
 		height: auto;
+		&:after {
+			display: none;
+		}
 		#heading {
 			left: 25px;
 		}
@@ -1359,11 +1362,11 @@ footer {
 				.btn {
 					display: none;
 				}
-			}
-			.img {
-				margin: 0 0 0 $mobPadding;
-				padding: 25px;
-				height: 300px;
+				.img {
+					background-color: $rose;
+					margin: 0 0 0 $mobPadding;
+					height: 300px;
+				}
 			}
 		}
 	}
