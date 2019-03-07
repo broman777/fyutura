@@ -1,9 +1,12 @@
 function closePop() {
+	$('body').removeClass('no-overflow');
 	$('#popup').removeClass('active');
 }
 function showPop(id) {
 	closePop();
+	$('body').addClass('no-overflow');
 	$('#popup').addClass('active');
+	scrollTo('#portfolio');
 }
 var vid = document.getElementById("video");
 function playVid() { 
@@ -53,6 +56,16 @@ $(document).ready(function(){
 		arrows: false,
 		dots: true
 	});
+	$('#popup-slider').slick({
+		arrows: false,
+		dots: true
+	});
+	$('#recent').on('beforeChange', function(){
+	  $('#recent .text').removeClass('animated'); 
+	});
+	$('#recent').on('afterChange', function(){
+	  $('#recent .text').addClass('animated'); 
+	});
 	$('#feedbacks').slick({
 		nextArrow: $('#feed-next'),
 		autoplay: true,
@@ -65,6 +78,7 @@ $(document).ready(function(){
 	$('#play').click(playVid);
 	$('#video').click(pauseVid);
 	$('#team').slick({
+		swipeToSlide: true,
 		arrows: false,
 		variableWidth: true,
 		slidesToScroll: 1
@@ -80,6 +94,7 @@ $(document).ready(function(){
 	})
 	$(document).on('keyup', function(e){if (e.keyCode == 27) closePop(e)});
 	$(document).on('click','a[href ^= "#"]',function(e){
+		closePop();
 		e.preventDefault();
 		scrollTo($(this).attr('href'));
 		$('#hamburger, #menu').removeClass('active');
@@ -101,7 +116,7 @@ $(document).on('submit','form',function(){ // перехватываем все 
 		    form.find('button').attr('disabled', 'disabled');
 		  },
 		success: function(data){ // событие после удачного обращения к серверу и получения ответа
-		    alert('Спасибо, мы скоро с Вами свяжемся!');
+		    alert('Thank you, data.!');
 		    form.find('input').val('');
 		 },
 		complete: function(data) { // событие после любого исхода

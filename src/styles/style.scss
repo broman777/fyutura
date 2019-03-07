@@ -19,6 +19,9 @@ body {
 	letter-spacing: 0.01em;
 	overflow: auto;
 	overflow-x: hidden;
+	&.no-overflow {
+		overflow: hidden;
+	}
 }
 a {
 	margin: 0;
@@ -451,6 +454,18 @@ img {
 	}
 }
 #portfolio {
+	&:after {
+		position: absolute;
+		top: 0;
+		content:'';
+		display: block;
+		right: 70px;
+		margin-left: 100px;
+		left: 50%;
+		height: 100%;
+		padding: 50px;
+		background-color: $rose;
+	}
 	min-height: 560px;
 	height: 100%;
 	height: calc(100% - 80px)!important;
@@ -478,13 +493,14 @@ img {
 		}
 	}
 	#popup {
-		transition: 0.8s ease-in;
-		transform: translate(-1600px,0);
+		transition: 0.8s ease-out;
+		transform: translate(-2560px,0);
 		z-index: 20;
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: calc(50% + 110px);
+		width: 100%;
+		width: calc(100% - 70px);
 		height: 100%;
 		background-color: $rose;
 		color: #fff;
@@ -499,9 +515,21 @@ img {
 			width: 100px;
 			z-index: 25;
 		}
+		&-slider {
+			position: absolute;
+			right: 0;
+			left: 50%;
+			top: 0;
+			bottom: 0;
+			margin-left: 135px;
+			.slick-dots {
+				left: 0;
+				right: 0;
+				padding: 0;
+			}
+		}
 		.content {
 			padding: 64px 50px 44px 220px;
-			overflow: auto;
 			line-height: 1.6em;
 			height: 100%;
 			.title {
@@ -509,6 +537,11 @@ img {
 				font-size: 36px;
 				line-height: 1em;
 				margin-bottom: 32px;
+			}
+			.desc {
+				height: 100%;
+				margin-right: 50%;
+				overflow: auto;
 			}
 			.short {
 				margin-bottom: 30px;
@@ -543,42 +576,15 @@ img {
 			background-color: #fff;
 		}
 	}
-	#recent {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		letter-spacing: normal;
+	.slick-slider {
 		.slick-slide, .slick-list, .slick-track {
 			height: 100%;
 			&>div {
 				height: 100%;
 			}
 		}
-		.slide {
-			height: 100%;
-			position: relative;
-			padding-left: 170px;
-			.text {
-				position: absolute;
-				top: 264px;
-				left: 240px;
-				right: 45%;
-				padding-right: 50px;
-				overflow: hidden;
-				&>p, &>span {
-					transform: translate(-800px,0);
-					transition: 0.8s ease-out;
-				}
-				&.animated {
-					p, span {transform: translate(0,0);}
-				}
-			}
-		}
 		.img {
-			background-color: $rose;
 			display: block !important;
-			margin-right: 70px;
-			margin-left: 50%;
 			height: 100%;
 			padding: 50px;
 			span {
@@ -620,6 +626,38 @@ img {
 				background-color: #fff;
 				&:hover {
 					transform: scale(1.5);
+				}
+			}
+		}
+	}
+	#recent {
+		z-index: 10;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		letter-spacing: normal;
+		.slide {
+			height: 100%;
+			position: relative;
+			padding-left: 170px;
+			.img {
+				margin-right: 70px;
+				margin-left: 50%;
+			}
+			.text {
+				position: absolute;
+				top: 264px;
+				left: 240px;
+				right: 45%;
+				padding-right: 50px;
+				overflow: hidden;
+				&>p, &>span {
+					transform: translate(-800px,0);
+					transition: 0.8s ease-out;
+					opacity: 0;
+				}
+				&.animated {
+					p, span {transform: translate(0,0); opacity: 1;}
 				}
 			}
 		}
