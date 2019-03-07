@@ -1083,6 +1083,13 @@ img {
 					border-color: red;
 				}
 			}
+			input:-webkit-autofill,
+			input:-webkit-autofill:hover, 
+			input:-webkit-autofill:focus, 
+			input:-webkit-autofill:active  {
+				-webkit-text-fill-color: #fff!important;
+			    -webkit-box-shadow: 0 0 0 30px #252525 inset !important;
+			}
 			span {
 				display: block;
 				position: absolute;
