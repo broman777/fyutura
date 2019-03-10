@@ -29,6 +29,7 @@ function scrollTo(target) {
 	else console.warn('No block found!')
 }
 function toggleMenu() {
+	$('#contacts-mobile').removeClass('active');
 	$('#hamburger, #menu').toggleClass('active');
 }
 function toggleVideo(max) {
@@ -104,25 +105,28 @@ $(document).ready(function(){
 	});
 	$(document).on('click', '.close', closePop);
 	$('#hamburger').on('click', toggleMenu);
+	$('.toggle-contacts').on('click', function(){
+		$('#contacts-mobile').toggleClass('active');
+	});
 	$('.custom-scroll').mCustomScrollbar();
 });
 
-$(document).on('submit','form',function(){ // перехватываем все при событии отправки
-	var form = $(this), // запишем форму, чтобы потом не было проблем с this
-		data = form.serialize(); // подготавливаем данные
-	$.ajax({ // инициализируем ajax запрос
+$(document).on('submit','form',function(){
+	var form = $(this),
+		data = form.serialize();
+	$.ajax({
 		type: 'POST',
 		url: "send.php",
 		dataType: 'json', 
 		data: data,
-		beforeSend: function(data) { // событие до отправки
+		beforeSend: function(data) {
 		    form.find('button').attr('disabled', 'disabled');
 		  },
-		success: function(data){ // событие после удачного обращения к серверу и получения ответа
+		success: function(data){
 		    alert('Thank you, data.!');
 		    form.find('input').val('');
 		 },
-		complete: function(data) { // событие после любого исхода
+		complete: function(data) {
 		    form.find('button').prop('disabled', false); // в любом случае включим кнопку обратно
 		 }
 	});

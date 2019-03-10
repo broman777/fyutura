@@ -1260,7 +1260,7 @@ footer {
 	header {
 		min-width: 0;
 		transform: translate(0,0)!important;
-		padding: 34px 0 14px;
+		padding: 24px 0;
 		.logo {
 			position: relative;
 			display: block;
@@ -1283,9 +1283,9 @@ footer {
 		position: fixed;
 		top: 0; 
 		padding: 110px $mobPadding 40px;
-		background-color: #fff;
+		background-color: $wbg;
 		transition: 0.4s ease-out;
-		transform: translate(100%,0);
+		transform: translate(-100%,0);
 		height: 100%;
 		left: 0;
 		right: 0;
@@ -1294,6 +1294,7 @@ footer {
 			display: block;
 			width: 100%;
 			margin: 0 0 10px;
+			color: #000;
 		}
 		&.active {
 			transform: translate(0,0);

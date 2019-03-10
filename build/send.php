@@ -51,7 +51,7 @@ if ($_POST) { // если передан массив POST
     $emailgo= new TEmail; // инициализируем супер класс отправки
     $emailgo->from_email= 'Fyutura'; // от кого
     $emailgo->from_name= 'Fyutura';
-    $emailgo->to_email= 'ruslan.brother@gmail.com'; // кому  ruslan.brother@gmail.com
+    $emailgo->to_email= 'info@fyutura.com'; // кому  ruslan.brother@gmail.com
     $emailgo->to_name= $name;
     $emailgo->subject= "Новая заявка на сайте Fyutura"; // тема
     $emailgo->body= $message; // сообщение
