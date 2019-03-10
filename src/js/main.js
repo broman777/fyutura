@@ -4,6 +4,7 @@ function closePop() {
 }
 function showPop(id) {
 	closePop();
+	$('.skills_section').slick('reinit');
 	$('body').addClass('no-overflow');
 	$('#popup').addClass('active');
 	scrollTo('#portfolio');
@@ -52,21 +53,21 @@ $(document).ready(function(){
 		$('header').addClass('active');
 		$('#top .header, #top .top-hint, #top .btn').addClass('animated');
 	}, 400);
-	$('#recent').slick({
+	$('#portfolio-left').slick({
 		arrows: false,
-		dots: true
+		dots: true,
+   		asNavFor: '#portfolio-right',
+	});
+	$('#portfolio-right').slick({
+		nextArrow: $('#portfolio-next'),
+		dots: true,
+   		asNavFor: '#portfolio-left',
 	});
 	$('#popup-slider').slick({
-		arrows: false,
+		nextArrow: $('#popup-next'),
 		dots: true,
 		autoplay: true,
 		autoplaySpeed: 3000
-	});
-	$('#recent').on('beforeChange', function(){
-	  $('#recent .text').removeClass('animated'); 
-	});
-	$('#recent').on('afterChange', function(){
-	  $('#recent .text').addClass('animated'); 
 	});
 	$('#feedbacks').slick({
 		nextArrow: $('#feed-next'),
@@ -85,7 +86,7 @@ $(document).ready(function(){
 		variableWidth: true,
 		slidesToScroll: 1
 	});
-	$("#recent .more").on('click', function(){
+	$("#portfolio .more").on('click', function(){
 		scrollTo('#portfolio');
 		showPop();
 	});
