@@ -9,6 +9,10 @@ function showPop(id) {
 	$('#popup').addClass('active');
 	scrollTo('#portfolio');
 }
+function toggleOverflow() {
+	if ($('body').hasClass('no-overflow')) $('body').removeClass('no-overflow');
+	else $('body').addClass('no-overflow');
+}
 var vid = document.getElementById("video");
 function playVid() { 
 	$('#stats .text').fadeOut(300);
@@ -29,6 +33,7 @@ function scrollTo(target) {
 	else console.warn('No block found!')
 }
 function toggleMenu() {
+	toggleOverflow();
 	$('#contacts-mobile').removeClass('active');
 	$('#hamburger, #menu').toggleClass('active');
 }
@@ -106,6 +111,8 @@ $(document).ready(function(){
 	$(document).on('click', '.close', closePop);
 	$('#hamburger').on('click', toggleMenu);
 	$('.toggle-contacts').on('click', function(){
+		toggleOverflow()
+		$('#menu, #hamburger').removeClass('active');
 		$('#contacts-mobile').toggleClass('active');
 	});
 	$('.custom-scroll').mCustomScrollbar();

@@ -424,16 +424,14 @@ img {
 			&:nth-child(8) {transition-delay: 0.45s;}
 			&:nth-child(9) {transition-delay: 0.5s;}
 			&::before {
+				position: absolute;
 				counter-increment: section;
 				content: counters(section,".") " ";
-				display: flex;
-				position: absolute;
-				justify-content: center;
-				align-items: center;
+				display: block;
 				width: 25px;
 				height: 25px;
+				line-height: 25px;
 				font-size: 14px;
-				line-height: 14px;
 				border-radius: 50%;
 				background-color: #000;
 				color: #fff;

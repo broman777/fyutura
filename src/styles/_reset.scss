@@ -39,3 +39,8 @@ a {
 .clearfix:after {
     clear: both;
 }
+a[href^="tel"] {
+  color: inherit; /* Inherit text color of parent element. */
+  text-decoration: none; /* Remove underline. */
+  /* Additional css `propery: value;` pairs here */
+}
