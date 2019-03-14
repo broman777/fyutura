@@ -53,6 +53,13 @@ function animateVisible(e, a) {
 }
 $(window).resize(toggleVideo);
 $(document).ready(function(){
+	var $popup = $('#popup-slider');
+	$popup.slick({
+		nextArrow: $('#popup-next'),
+		dots: true,
+		autoplay: true,
+		autoplaySpeed: 3000
+	});
 	toggleVideo();
 	setTimeout(function(){
 		$('header').addClass('active');
@@ -67,12 +74,6 @@ $(document).ready(function(){
 		nextArrow: $('#portfolio-next'),
 		dots: true,
    		asNavFor: '#portfolio-left',
-	});
-	$('#popup-slider').slick({
-		nextArrow: $('#popup-next'),
-		dots: true,
-		autoplay: true,
-		autoplaySpeed: 3000
 	});
 	$('#feedbacks').slick({
 		nextArrow: $('#feed-next'),
@@ -97,8 +98,14 @@ $(document).ready(function(){
 				desc = html.find('.description').html(),
 				slides = html.find('.slides').html();
 		$("#popup .desc").html(desc);
-		$("#popup-slider").html(slides);
-		$("#popup-slider").slick('refresh');
+		$popup.slick("unslick");
+		$popup.html(slides);
+		$popup.slick({
+			nextArrow: $('#popup-next'),
+			dots: true,
+			autoplay: true,
+			autoplaySpeed: 3000
+		});
 		showPop(desc, slides);
 	});
 	$('.toggle').on('click',function(){

@@ -522,6 +522,7 @@ img {
 		overflow: auto;
 		&-next {
 			right: 100px;
+			&.slick-hidden {display: none;}
 		}
 		&:before {
 			opacity: 0.2;
