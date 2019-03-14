@@ -2,9 +2,8 @@ function closePop() {
 	$('body').removeClass('no-overflow');
 	$('#popup').removeClass('active');
 }
-function showPop(id) {
+function showPop() {
 	closePop();
-	$('.skills_section').slick('reinit');
 	$('body').addClass('no-overflow');
 	$('#popup').addClass('active');
 	scrollTo('#portfolio');
@@ -94,7 +93,13 @@ $(document).ready(function(){
 	});
 	$("#portfolio .more").on('click', function(){
 		scrollTo('#portfolio');
-		showPop();
+		var html = $(this).parent('.text').siblings('.hidden'),
+				desc = html.find('.description').html(),
+				slides = html.find('.slides').html();
+		$("#popup .desc").html(desc);
+		$("#popup-slider").html(slides);
+		$("#popup-slider").slick('refresh');
+		showPop(desc, slides);
 	});
 	$('.toggle').on('click',function(){
 		$(this).toggleClass('active');
