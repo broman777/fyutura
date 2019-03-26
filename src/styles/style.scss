@@ -1221,7 +1221,7 @@ footer {
 	}
 }
 @media screen and (max-width: 1023px) {
-	.mob {
+	.mob, #contacts-mobile {
 		display: block;
 	}
 	.dt-only {
@@ -1261,7 +1261,7 @@ footer {
 		padding: 110px $mobPadding 40px;
 		background-color: $wbg;
 		transition: 0.4s ease-out;
-		transform: translate(-100%,0);
+		transform: translate(-1023px,0);
 		height: 100%;
 		left: 0;
 		right: 0;
